@@ -38,7 +38,7 @@ use ::std::{error::Error, fmt, option::Option};
 
 /// Sqlx error wrapper to hold additional info
 #[derive(Debug)]
-pub struct SqlxError(::sqlx_core::error::Error, String);
+pub struct SqlxError(pub ::sqlx_core::error::Error, pub String);
 
 /// A `Result` based on `SqlxError`
 pub type SqlxResult<T> = Result<T, SqlxError>;
